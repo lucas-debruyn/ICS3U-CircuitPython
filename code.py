@@ -11,7 +11,7 @@ def game_scene():
     # his function is the main game game_scene
 
     print("\n\n\n") # 3 blank lines
-    print("Hello, World!")
+    print("Hello, Lucas!")
 
     # repeat forever, game loop
     while True:
