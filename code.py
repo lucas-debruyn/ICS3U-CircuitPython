@@ -49,7 +49,7 @@ def game_scene():
                 ship.move((ship.x - constants.SPRITE_MOVEMENT_SPEED), ship.y)
             else:
                 ship.move(0, ship.y)
-            
+
         # update game logic
 
         # redraw Sprite
