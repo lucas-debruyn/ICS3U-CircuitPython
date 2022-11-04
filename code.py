@@ -19,9 +19,12 @@ def game_scene():
 
     # set background to image 0 in the image bank
     #   and the size (10x8 tiles of size 16x16)
-    background = stage.Grid(image_bank_background, constants.SCREEN_GRID_X, constants.SCREEN_GRID_Y)
+    background = stage.Grid(
+        image_bank_background, constants.SCREEN_GRID_X, constants.SCREEN_GRID_Y)
 
-    ship = stage.Sprite(image_bank_sprites, 5, 75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE))
+    ship = stage.Sprite(
+        image_bank_sprites, 5, 75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE)
+    )
 
     # create a stage for the background to show up on
     #   and set the frame rate to 60fps
@@ -32,7 +35,7 @@ def game_scene():
     #   most likely you will only render the background once per game scene
     game.render_block()
 
-   # repeat forever, game loop
+    # repeat forever, game loop
     while True:
         # get user input
         keys = ugame.buttons.get_pressed()
