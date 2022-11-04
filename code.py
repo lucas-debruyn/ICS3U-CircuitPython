@@ -7,6 +7,8 @@
 import stage
 import ugame
 
+import constants
+
 
 def game_scene():
     # his function is the main game game_scene
@@ -20,15 +22,13 @@ def game_scene():
     background = stage.Grid(image_bank_background, 10, 8)
 
     # a sprite that will be updated every frame
-    ship = stage.Sprite(ugame.display, 5, 75, 66)
+    ship = stage.Sprite(ugame.display, 5, 75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE))
 
     # create a stage for the background to show up on
     #   and set the frame rate to 60fps
     game = stage.Stage(ugame.display, 60)
-
     # set the layers of all sprites, items show up in order
     game.layers = [ship] + [background]
-
     # render all sprites
     #   most likely you will only render the background once per game scene
     game.render_block()
@@ -38,23 +38,18 @@ def game_scene():
         # get user input
         keys = ugame.buttons.get_pressed()
 
-        if keys & ugame.K_X:
-            print("A")
-        if keys & ugame.K_O:
-            print("B")
-        if keys & ugame.K_START:
-            print("Start")
-        if keys & ugame.K_SELECT:
-            print("Select")
-        if keys & ugame.K_RIGHT:
-            ship.move(ship.x + 1, ship.y)
-        if keys & ugame.K_LEFT:
-            ship.move(ship.x - 1, ship.y)
-        if keys & ugame.K_UP:
-            ship.move(ship.x, ship.y - 1)
-        if keys & ugame.K_DOWN:
-            ship.move(ship.x, ship.y + 1)
+        if keys & ugame.K_RIGHT != 0:
+            if ship.x < (constants.SCREEN_X - constants.SPRITE_SIZE):
+                ship.move((ship.x + constants.SPRITE_MOVEMENT_SPEED), ship.y)
+            else:
+                ship.move((constants.SCREEN_X - constants.SPRITE_SIZE), ship.y)
 
+        if keys & ugame.K_LEFT != 0:
+            if ship.x > 0:
+                ship.move((ship.x - constants.SPRITE_MOVEMENT_SPEED), ship.y)
+            else:
+                ship.move(0, ship.y)
+            
         # update game logic
 
         # redraw Sprite
