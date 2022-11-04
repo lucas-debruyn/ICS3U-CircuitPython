@@ -9,7 +9,6 @@ import stage
 import ugame
 
 
-
 def game_scene():
     # his function is the main game game_scene
 
