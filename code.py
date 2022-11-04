@@ -4,10 +4,10 @@
 # Created on: Oct 2022
 # This program is the "Space Aliens" program on the PyBadge
 
+import constants
 import stage
 import ugame
 
-import constants
 
 
 def game_scene():
@@ -20,7 +20,8 @@ def game_scene():
     # set background to image 0 in the image bank
     #   and the size (10x8 tiles of size 16x16)
     background = stage.Grid(
-        image_bank_background, constants.SCREEN_GRID_X, constants.SCREEN_GRID_Y)
+        image_bank_background, constants.SCREEN_GRID_X, constants.SCREEN_GRID_Y
+    )
 
     ship = stage.Sprite(
         image_bank_sprites, 5, 75, constants.SCREEN_Y - (2 * constants.SPRITE_SIZE)
