@@ -16,7 +16,7 @@ def game_scene():
     image_bank_background = stage.Bank.from_bmp16("space_aliens_background.bmp")
     image_bank_sprites = stage.Bank.from_bmp16("space_aliens.bmp")
 
-    # button that you want to keep state information on 
+    # button that you want to keep state information on
     a_button = constants.button_state["button_up"]
     b_button = constants.button_state["button_up"]
     start_button = constnats.button_state["button_up"]
@@ -52,7 +52,7 @@ def game_scene():
 
     # set the layers of all sprites, items show up in order
     game.layers = [ship] + [alien] + [background]
-    
+
     # render all sprites
     #   most likely you will only render the background once per game scene
     game.render_block()
