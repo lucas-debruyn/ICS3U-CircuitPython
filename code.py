@@ -155,7 +155,7 @@ def game_scene():
         9,
         int(constants.SCREEN_X / 2 - constants.SPRITE_SIZE / 2),
         16,
-    ) 
+    )
 
     # create a stage for the background to show up on
     #  and set the frame rate to 60 fps
