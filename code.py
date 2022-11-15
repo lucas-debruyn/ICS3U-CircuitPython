@@ -138,8 +138,9 @@ def game_scene():
     sound.mute(False)
 
     # set the background to image 0 in the image bank
-    background = stage.Grid(image_bank_background, constants.SCREEN_GRID_X,
-        constants.SCREEN_GRID_Y)
+    background = stage.Grid(
+        image_bank_background, constants.SCREEN_GRID_X, constants.SCREEN_GRID_Y
+    )
     for x_location in range(constants.SCREEN_GRID_X):
         for y_location in range(constants.SCREEN_GRID_Y):
             tile_picked = random.randint(1, 3)
