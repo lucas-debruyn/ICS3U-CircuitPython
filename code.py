@@ -217,7 +217,7 @@ def game_scene():
                 ship.move((ship.x - constants.SPRITE_MOVEMENT_SPEED), ship.y)
             else:
                 ship.move(0, ship.y)
-        
+     
         # update game logic
         # play sound if A was just button_just_pressed
         if a_button == constants.button_state["button_just_pressed"]:
@@ -233,19 +233,19 @@ def game_scene():
             if lasers[laser_number].x > 0:
                 lasers[laser_number].move(
                     lasers[laser_number].x,
-                    lasers[laser_number].y - constants.LASER_SPEED
+                    lasers[laser_number].y - constants.LASER_SPEED,
                 )
                 if lasers[laser_number].y < constants.OFF_TOP_SCREEN:
                     lasers[laser_number].move(
                         constants.OFF_SCREEN_X, constants.OFF_SCREEN_Y
                     )
-                                     
+                             
         # each frame move the aliens down, that are on the screen
         for alien_number in range(len(aliens)):
             if aliens[alien_number].x > 0:
                 aliens[alien_number].move(
                     aliens[alien_number].x,
-                    aliens[alien_number].y + constants.ALIEN_SPEED
+                    aliens[alien_number].y + constants.ALIEN_SPEED,
                 )
                 if aliens[alien_number].y > constants.SCREEN_Y:
                     aliens[alien_number].move(
